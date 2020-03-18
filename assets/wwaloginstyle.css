@@ -1,0 +1,95 @@
+body
+	{
+		font-size: medium;
+		text-align:center;
+		font-family: Verdana, Helvetica, Arial, sans-serif;
+		background-color: #aaaaaa;
+	}
+	
+@font-face
+	{
+		font-family: 'Direction';
+		src: url('Direction.ttf');
+		font-weight: normal;
+		font-style: normal;
+	}
+
+@font-face
+	{
+		font-family: 'Razer Regular';
+		src: url('RazerRegular.ttf');
+		font-weight: normal;
+		font-style: normal;
+	}
+	
+h1	
+	{ 
+		font-family: Direction;
+		font-size: 4em;
+		padding: none;
+		color:black;
+	}
+	
+table
+	{
+		background-color: #a46f30;
+		border: none;
+		padding: 10px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 50px;
+	}
+
+th	
+	{
+		border: none;
+		vertical-align: top;
+		padding-right: 20px;
+		font-size: 1.5em;
+	}
+
+td	
+	{
+		border: none;
+	}
+
+#remember
+	{
+		font-size: .9em;
+	}
+	
+#button, #loginArea
+	{
+		font-family: "Razer Regular";
+	}
+	
+#button
+	{	
+		width: 175px;
+		height: 30px;
+		position: relative;
+		left: 100px;
+		background-color: #990000;
+		border-color: #990000;
+		font-size: 1.3em;
+	}
+
+#loginArea
+	{
+
+		width: 800px;
+		margin-right: auto;
+		margin-left: auto;
+		margin-top: 150px;
+		border: solid black;
+		background-color: #f8941d;
+		
+	}
+	
+#loginArea
+	{
+		background-image:  url(palmTrees.gif),url(backgrounds.gif);
+		background-size: 105%;
+		background-repeat: no-repeat;
+		background-position: center bottom;
+	}

@@ -1,0 +1,203 @@
+body
+	{
+		font-size: medium;
+		text-align:center;
+		font-family: 'Razer Regular';
+		background-color: #aaaaaa;
+
+	}
+	
+@font-face
+	{
+		font-family: 'Direction';
+		src: url('Direction.ttf');
+		font-weight: normal;
+		font-style: normal;
+	}
+
+@font-face
+	{
+		font-family: 'Razer Regular';
+		src: url('RazerRegular.ttf');
+		font-weight: normal;
+		font-style: normal;
+	}
+	
+h1	
+	{ 
+		font-family: Direction;
+		font-size: 3em;
+		color:black;
+	}
+
+h2
+	{
+		font-size: 2em;
+	}
+	
+#container
+	{
+		background-image:  url(palmTrees.gif),url(backgrounds.gif);
+		background-size: 105%;
+		background-repeat: no-repeat;
+		background-position: center bottom;
+		
+		
+		margin-top: 150px;
+		margin-right: auto;
+		margin-left: auto;
+		width: 1281px;
+		background: #f8941d;
+		
+		border: solid black;
+			
+	}
+#copy
+	{
+		position: relative;
+		font-size: 2.5em;
+		top: 10px;
+	}
+#content
+	{
+		clear: both;
+	}
+#results
+	{
+		width: 99%;
+		border: solid thin silver;
+		margin-top: 0px;
+		margin-bottom: 0px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+	
+#phpTable
+	{
+		margin-top: 0px;
+		margin-bottom: 50px;
+		border: solid thing black;
+	}
+		
+#phpTable tr:hover
+	{
+		background-color: #BF8030;
+	}
+	
+#phpTable tr:first-child
+	{
+		background-color: #a46f30; 
+	}
+
+.button
+	{	
+		width: 180px;
+		height: 30px;
+		padding-bottom: 20px;
+		background-color: #990000;
+		border-color: #990000;
+		font-size: 1em;
+	}
+	
+.height
+	{
+		height: 400px;
+		border: solid thin silver;
+		text-align: center;
+	}
+	
+
+#selection
+	{
+		width: 480px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+	
+#forms
+	{
+		width: 730px;
+		margin-right: 20px;
+		float: right;
+	}
+	
+table
+	{
+		background-color: #a46f30;
+		border: none;
+		padding: 25px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 50px;
+		margin-top: 50px;
+	}
+
+th	
+	{
+		border: none;
+		vertical-align: top;
+		
+		font-size: 1.5em;
+	}
+
+td	
+	{
+		border: none;
+	}
+
+header 
+	{
+		clear: both;
+	}
+
+footer
+	{
+		clear: both;
+		padding: 10px;
+	}
+
+#navHolder
+	{
+		
+
+		clear: both;
+	}
+
+#nav
+	{
+		width: 100%;
+		float: left;
+		margin: 0 0 3em 0;
+		padding: 0;
+		list-style: none;
+		background-color: #BF8030;
+		border-bottom: 1px solid #ccc; 
+		border-top: 1px solid #ccc; 
+		clear: both;
+	}
+	
+#nav li 
+	{
+		float: left; 
+	}
+	
+#nav li a 
+	{
+		display: block;
+		padding: 8px 15px;
+		text-decoration: none;
+		font-weight: bold;
+		color: #a46f30;
+		border-right: 1px solid #ccc; 
+	}
+	
+#nav li a:hover
+	{
+		color: #BF8030;
+		background-color: #a46f30; 
+	}
+	
+	
+	
+	
+	
