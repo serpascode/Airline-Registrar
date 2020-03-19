@@ -1,0 +1,128 @@
+#Sql Statments For creating Tables
+#Engine = innodb so that constraints are inforced
+#; is to seperate sql statements, # is start of comment[it will be ignored]
+# copy paste entire page into sql to initiate tables and insert data
+
+#Use this to erase all tables
+#DROP TABLE WWA_Flight, WWA_Aircraft, WWA_Aircrew, WWA_Airport, WWA_Cargo;
+
+#CREATE SCHEMA wwadatabase;
+
+# This Creates Aircraft Table
+create table WWA_Aircraft(
+Tail_ID varchar(5) Not Null,
+Type char(20) Not Null,
+Fuel varchar(7) Not Null,
+PRIMARY KEY(Tail_ID)
+)Engine = innodb;
+
+# This Creates Airport Table
+create table WWA_Airport(
+Airport_Code char(3) Not Null,
+Airport_Name char(50) Not Null,
+PRIMARY KEY(Airport_Code),
+UNIQUE(Airport_Code, Airport_Name)
+)Engine = innodb;
+
+# This Creates Aircrew Table
+create table WWA_Aircrew(
+Aircrew_ID varchar(5) Not Null,
+Pilot char(25) Not Null,
+Navigator char(25) Not Null,
+PRIMARY KEY(Aircrew_ID),
+UNIQUE (Pilot, Navigator)
+)Engine = innodb;
+
+# This Creates Cargo Table
+create table WWA_Cargo(
+Skid_ID varchar(5) Not Null,
+Description Char(50) Not Null,
+Weight varchar(7) Not Null,
+PRIMARY KEY(Skid_ID)
+)Engine = innodb;
+
+# This Creates Flight Table
+create table WWA_Flight(
+Flight_ID varchar(5) Not Null, 
+Tail_ID varchar(5) Not Null,
+Aircrew_ID varchar(5) Not Null,
+Skid_ID varchar(5) Null,
+Origin char(3) Not Null,
+Destination char(3) Not Null,
+Arrival_Time DATETIME Not Null,
+Departure_Time DATETIME Not Null,
+Primary Key(Flight_ID),
+UNIQUE(Tail_ID, Aircrew_ID, Skid_ID, Origin, Destination),
+Foreign Key(Tail_ID)
+REFERENCES WWA_Aircraft(Tail_ID)
+ON DELETE CASCADE
+ON UPDATE CASCADE,
+Foreign Key(Skid_ID)
+REFERENCES WWA_Cargo(Skid_ID)
+ON DELETE SET NULL
+ON UPDATE CASCADE,
+Foreign Key(Aircrew_ID)
+REFERENCES WWA_Aircrew(Aircrew_ID)
+ON DELETE CASCADE
+ON UPDATE CASCADE,
+Foreign Key(Origin)
+REFERENCES WWA_Airport(Airport_Code)
+ON DELETE CASCADE
+ON UPDATE CASCADE,
+Foreign Key(Destination)
+REFERENCES WWA_Airport(Airport_Code)
+ON DELETE CASCADE
+ON UPDATE CASCADE
+)Engine = innodb;
+
+
+insert into WWA_Aircraft
+values (12345, 'Boeing 797', 7000);
+insert into WWA_Aircraft
+values (23456, 'Airbus A300', 7000);
+insert into WWA_Aircraft
+values (56789, 'Sukhoi Su-33', 4300);
+insert into WWA_Aircraft
+values (98765, 'Eurocopter 155', 830);
+
+
+insert into WWA_Airport
+values ('BIN', 'Bamiyan, Afghanistan');
+insert into WWA_Airport
+values ('TNM', 'Teniente, Antartica');
+insert into WWA_Airport
+values ('NNR', 'Connemara, Ireland');
+insert into WWA_Airport
+values ('SAL', 'Aeropuerto International, El Salvador');
+
+
+insert into WWA_Aircrew
+values (12345, 'Luis Serpas', 'Lauren Cortado');
+insert into WWA_Aircrew
+values (23456, 'Leonard Altamura', 'David Silva');
+insert into WWA_Aircrew
+values (56789, 'Amelia Earhart', 'Bessie Coleman');
+insert into WWA_Aircrew
+values (98765, 'Neil Armstrong', 'John Glenn');
+
+
+insert into WWA_Cargo
+values (12345, 'Potatoes, Carrots, and Cabbages', 100);
+insert into WWA_Cargo
+values (23456, 'Chinaware, IPads, and Stereos', 200);
+insert into WWA_Cargo
+values (56789, 'Candy', 10); 
+insert into WWA_Cargo
+values (98765, 'Moon-Rocks', 500);
+
+
+insert into WWA_Flight
+values(12345, 12345, 12345, 23456, 'BIN', 'TNM', NOW(), DATE_ADD(NOW(), INTERVAL 5 HOUR));
+insert into WWA_Flight
+values(23456, 23456, 23456, 12345, 'TNM', 'BIN', NOW(), DATE_ADD(NOW(), INTERVAL 5 HOUR));
+insert into WWA_Flight
+(Flight_ID, Tail_ID, Aircrew_ID, Origin, Destination, Arrival_Time, Departure_Time)
+values(56789, 56789, 56789, 'SAL','NNR', NOW(), DATE_ADD(NOW(), INTERVAL 5 HOUR));
+insert into WWA_Flight
+values(98765, 98765, 98765, 98765, 'SAL', 'NNR', NOW(), DATE_ADD(NOW(), INTERVAL 5 HOUR));
+
